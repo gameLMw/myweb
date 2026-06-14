@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Maven项目对象模型(POM)配置文件 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- POM模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 组织或项目的唯一标识符 -->
+    <groupId>io.github.gameLMw</groupId>
+    <!-- 项目名称 -->
+    <artifactId>myweb</artifactId>
+    <!-- 项目版本号,SNAPSHOT表示开发中的快照版本 -->
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 打包方式,war包用于部署到Java Web容器 -->
+    <packaging>war</packaging>
+
+    <!-- 项目属性配置 -->
+    <properties>
+        <!-- Java编译源代码版本 -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <!-- Java编译目标字节码版本 -->
+        <maven.compiler.target>21</maven.compiler.target>
+        <!-- 项目构建源文件编码格式 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 项目依赖配置 -->
+    <dependencies>
+        <!-- MySQL数据库JDBC驱动程序 -->
+        <!-- Source: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <dependency>
+            <!-- MySQL官方JDBC驱动组ID -->
+            <groupId>com.mysql</groupId>
+            <!-- MySQL连接器构件ID -->
+            <artifactId>mysql-connector-j</artifactId>
+            <!-- 驱动版本号 -->
+            <version>8.3.0</version>
+            <!-- 依赖范围:compile表示编译和运行时都需要 -->
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Java Servlet API,用于开发Web应用 -->
+        <!-- Source: https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <!-- Java EE Servlet规范组ID -->
+            <groupId>javax.servlet</groupId>
+            <!-- Servlet API构件ID -->
+            <artifactId>javax.servlet-api</artifactId>
+            <!-- Servlet API版本号 -->
+            <version>4.0.1</version>
+            <!-- 依赖范围:provided表示由Web容器(如Tomcat)提供,打包时不包含 -->
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- 构建配置 -->
+    <build>
+        <!-- 最终生成的war包名称 -->
+        <finalName>myweb</finalName>
+        <!-- 构建插件配置 -->
+        <plugins>
+            <!-- Maven WAR插件,用于打包Web应用 -->
+            <plugin>
+                <!-- Apache Maven插件组ID -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <!-- WAR打包插件 -->
+                <artifactId>maven-war-plugin</artifactId>
+                <!-- 插件版本号 -->
+                <version>3.4.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
